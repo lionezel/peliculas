@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { MoviesListComponent } from './components/movies-list/movies-list.component';
-import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { MoviesListComponent } from './components/movies/movies-list/movies-list.component';
+import { MovieDetailComponent } from './components/movies/movie-detail/movie-detail.component';
+import { SeriesListComponent } from './components/series/series-list/series-list.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent},
   { path: 'movies/popular', component: MoviesListComponent},
-  { path: 'movies/:id', component: MovieDetailComponent}
+  { path: 'movies/:id', component: MovieDetailComponent},
+
+  { path: 'series/popular', component: SeriesListComponent},
 ];
 
 @NgModule({

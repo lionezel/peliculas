@@ -18,9 +18,9 @@ export class MovieDetailComponent {
   }
 
   getMovieDetail(id: any){
-    this._movieServices.detail_movie(id).subscribe(async(response) => {
+    this._movieServices.detail_movie(id).subscribe((response) => {
       console.log(response)
-      this.detail_arr = await response;
+      this.detail_arr = response;
     });
   }
 }

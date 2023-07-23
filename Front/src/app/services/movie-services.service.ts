@@ -17,7 +17,7 @@ export class MovieServicesService {
   }
 
   list_popular_movie(): Observable<any> {
-    return this._htpp.get(`${this.baseURL}/movie/now_playing`, {
+    return this._htpp.get(`${this.baseURL}/movie/popular`, {
       params: this.params,
     });
   }

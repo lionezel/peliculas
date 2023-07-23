@@ -5,13 +5,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import { MoviesListComponent } from './components/movies/movies-list/movies-list.component';
 import { NavComponent } from './components/nav/nav.component';
 import { PosterPipe } from './pipe/poster.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { MovieDetailComponent } from './components/movies/movie-detail/movie-detail.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,6 +20,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { SeriesListComponent } from './components/series/series-list/series-list.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     NavComponent,
     PosterPipe,
     MovieDetailComponent,
+    SeriesListComponent,
   ],
   imports: [
     BrowserModule,
