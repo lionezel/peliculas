@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+
+<div
+    class="card"
+    *ngFor="let item of detail_arr"
+    routerLink="/movies/{{ item.id }}"
+    style="cursor: pointer; box-shadow: inset"
+  >
+    <img
+      [src]="item.backdrop_path | poster"
+      alt="item.title"
+      style="border-radius: 6px 6px 0px 0px"
+    />
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center">{{ item.title }}</h5>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center">{{ item.release_date }}</h5>
+    </div>
+  </div>
