@@ -21,6 +21,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SeriesListComponent } from './components/series/series-list/series-list.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -32,6 +35,7 @@ import { SeriesListComponent } from './components/series/series-list/series-list
     PosterPipe,
     MovieDetailComponent,
     SeriesListComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { SeriesListComponent } from './components/series/series-list/series-list
     MatExpansionModule,
     CarouselModule,
     AccordionModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DropdownModule,
+    FormsModule  
 
   ],
   schemas: [

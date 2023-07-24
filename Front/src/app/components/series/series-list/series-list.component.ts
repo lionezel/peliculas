@@ -8,10 +8,15 @@ import { serieService } from 'src/app/services/serie.service';
 })
 export class SeriesListComponent {
   public popular_serie_arr: any;
+  public airing_Today_serie_arr: any;
 
   constructor(private _serieServies: serieService) {
+    this.list_popular_series();
+  }
+
+  list_popular_series() {
     this._serieServies.list_popular_series().subscribe((response) => {
-      console.log(response)
+      console.log(response);
       this.popular_serie_arr = response.results;
     });
   }

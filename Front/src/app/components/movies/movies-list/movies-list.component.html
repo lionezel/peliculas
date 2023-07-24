@@ -4,19 +4,16 @@
   <span style="font-size: 30px">Películas populares</span>
 </div>
 
+<input
+  type="text"
+  [(ngModel)]="filter_movies"
+  name="filter_movies"
+  style="width: 50%; margin-left: 5%; height: 40px; border-radius: 20px;"
+/>
+
 <div class="" style="float: left; width: 30%; padding: 30px">
   <p-accordion [multiple]="true" [activeIndex]="[0]">
-    <p-accordionTab header="Ordenar">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </p-accordionTab>
+    <p-accordionTab header="Ordenar"> </p-accordionTab>
     <p-accordionTab header="Dónde se puede ver">
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -53,7 +50,7 @@
 >
   <div
     class="card"
-    *ngFor="let item of movies_arr"
+    *ngFor="let item of movies_arr | filter : filter_movies"
     routerLink="/movies/{{ item.id }}"
     style="
       cursor: pointer;
@@ -61,8 +58,6 @@
       box-shadow: 5px 8px 12px rgb(203, 200, 200);
     "
   >
-
-
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="25"

@@ -15,8 +15,32 @@ export class serieService {
     };
   }
 
+  list_discover_series(): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/discover/tv`, {
+      params: this.params,
+    });
+  }
+
   list_popular_series(): Observable<any> {
     return this._htpp.get(`${this.baseURL}/tv/popular`, {
+      params: this.params,
+    });
+  }
+
+  list_airing_Today_series(): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/airing_today`, {
+      params: this.params,
+    });
+  }
+
+  list_on_the_air_series(): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/on_the_air`, {
+      params: this.params,
+    });
+  }
+
+  list_top_rated_series(): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/top_rated`, {
       params: this.params,
     });
   }

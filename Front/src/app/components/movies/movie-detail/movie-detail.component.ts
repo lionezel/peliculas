@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { combineLatest } from 'rxjs';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 
 @Component({
@@ -13,14 +14,13 @@ export class MovieDetailComponent {
   
 
   constructor(private _movieServices: MovieServicesService, private activatedRoute: ActivatedRoute,) {
-    const getParamsId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.getMovieDetail(getParamsId)
+    const {id} = this.activatedRoute.snapshot.params
+    this._movieServices.detail_movie(id).subscribe(([movie]) => {
+      console.log(movie)
+      this.detail_arr =  movie;
+    });
+
   }
 
-  getMovieDetail(id: any){
-    this._movieServices.detail_movie(id).subscribe((response) => {
-      console.log(response)
-      this.detail_arr = response;
-    });
-  }
+  
 }
