@@ -38,8 +38,43 @@
     <h3>{{ detail_arr.overview }}</h3>
   </div>
 
-<div>
   <p>Reparto principal</p>
+<div
+  class="container"
+  style="
+    display: flex;
+    overflow: scroll;
+    height: 300px;
+    border: 1px solid #111;
+    margin-left: 1%;
+    gap: 20px;
+    width: 75%;
+  "
+>
+  <div *ngFor="let item of credits_arr">
+    <div class="card" style="width: 18rem; align-items: center">
+      <img
+        [src]="item.profile_path | poster"
+        class="card-img-top"
+        alt="..."
+        style="width: 50%; height: 200px;"
+      />
+      <div class="card-body">
+        <h2 class="card-text">
+          {{ item.name }}
+        </h2>
+        <h5>{{ item.character }}</h5>
+      </div>
+    </div>
+  </div>
 </div>
 
+  <div>
+    
+  </div>
+
+
 </div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

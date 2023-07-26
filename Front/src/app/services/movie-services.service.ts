@@ -32,4 +32,10 @@ export class MovieServicesService {
       params: this.params,
     });
   }
+
+  credits_movie(id: any): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/movie/${id}/credits`, {
+      params: this.params,
+    });
+  }
 }
