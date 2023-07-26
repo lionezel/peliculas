@@ -1,9 +1,45 @@
 <app-nav></app-nav>
 
-<div
-    class="card"
-    *ngFor="let item of detail_arr"
-    style="cursor: pointer; box-shadow: inset"
-  >
-
+<div *ngIf="detail_arr" style="width: 100%; margin: 0">
+  <div style="position: relative">
+    <img
+      [src]="detail_arr.backdrop_path | poster"
+      alt=""
+      style="opacity: 0.9; filter: brightness(50%); height: 600px; width: 100%"
+    />
   </div>
+
+  <img
+    [src]="detail_arr.poster_path | poster"
+    class="card-img-top"
+    alt="..."
+    style="
+      height: 70%;
+      margin-left: 2%;
+      position: absolute;
+      top: 18%;
+      width: 25%;
+      border-radius: 10px;
+    "
+  />
+
+  <div
+    style="
+      margin-top: 10%;
+      margin-left: 30%;
+      position: absolute;
+      top: 0%;
+      color: white;
+    "
+  >
+    <p style="font-size: 30px">{{ detail_arr.title }}</p>
+    <h5>{{ detail_arr.release_date }}</h5>
+    <h1>Vista general</h1>
+    <h3>{{ detail_arr.overview }}</h3>
+  </div>
+
+<div>
+  <p>Reparto principal</p>
+</div>
+
+</div>

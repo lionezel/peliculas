@@ -50,7 +50,7 @@
 >
   <div
     class="card"
-    *ngFor="let item of movies_arr | filter : filter_movies"
+    *ngFor="let item of movies_arr | filter : filter_movies  "
     routerLink="/movies/{{ item.id }}"
     style="
       cursor: pointer;
