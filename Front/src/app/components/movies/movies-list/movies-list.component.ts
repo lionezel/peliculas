@@ -11,6 +11,7 @@ export class MoviesListComponent implements OnInit {
   public sort_by: any;
   public order: any;
   public filter_movies = '';
+  public percentage_movie: any;
 
   constructor(private _movieServices: MovieServicesService) {
     this.list_popular_movie();
@@ -18,9 +19,9 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.order = [
-      {name: 'Popularidad ddescendente' },
-      {name: 'Popularidad descendente', value: 'Popularidad descendente' }
-    ]
+      { name: 'Popularidad ddescendente' },
+      { name: 'Popularidad descendente', value: 'Popularidad descendente' },
+    ];
   }
 
   list_popular_movie() {
@@ -30,5 +31,9 @@ export class MoviesListComponent implements OnInit {
     });
   }
 
-
+  percentage() {
+    if (this.percentage_movie >= 7.5) {
+      this.percentage_movie
+    }
+  }
 }

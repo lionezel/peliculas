@@ -8,7 +8,7 @@
   type="text"
   [(ngModel)]="filter_movies"
   name="filter_movies"
-  style="width: 50%; margin-left: 5%; height: 40px; border-radius: 20px;"
+  style="width: 50%; margin-left: 5%; height: 40px; border-radius: 20px"
 />
 
 <div class="" style="float: left; width: 30%; padding: 30px">
@@ -83,7 +83,7 @@
             transform: rotate(-90deg);
             transform-origin: 50%;
             stroke-dasharray: 100 100;
-            stroke: #aaa;
+            stroke: #ce1212;
           "
         />
         <circle
@@ -101,22 +101,22 @@
           "
         />
       </svg>
-      
-          <span
-            style="
-              position: absolute;
-              top: 30%;
-              left: 0%;
-              bottom: 0%;
-              right: 0%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font: 12px/1em Verdana;
-              color: white;
-            "
-            >75%</span
-          >
+
+      <span
+        style="
+          position: absolute;
+          top: 30%;
+          left: 0%;
+          bottom: 0%;
+          right: 0%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 12px/1em Verdana;
+          color: white;
+        "
+        >{{ item.vote_average }}%</span
+      >
     </span>
 
     <img
@@ -124,13 +124,13 @@
       alt="item.title"
       style="border-radius: 6px 6px 0px 0px"
     />
-    <div class="card-body">
-      <p class="card-title" style="text-align: left">{{ item.title }}</p>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title" style="text-align: center">
-        {{ item.release_date }}
-      </h5>
+    <div class="card-body" style="height: 100px">
+      <p
+        class="card-title"
+        style="text-align: center; font-size: 15px; margin-top: 15px"
+      >
+        {{ item.title }}
+      </p>
     </div>
   </div>
 </div>

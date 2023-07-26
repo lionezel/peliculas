@@ -24,6 +24,7 @@ import { SeriesListComponent } from './components/series/series-list/series-list
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipe/filter.pipe';
+import { PeopleListComponent } from './components/people/people-list/people-list.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { FilterPipe } from './pipe/filter.pipe';
     MovieDetailComponent,
     SeriesListComponent,
     FilterPipe,
+    PeopleListComponent,
   ],
   imports: [
     BrowserModule,
