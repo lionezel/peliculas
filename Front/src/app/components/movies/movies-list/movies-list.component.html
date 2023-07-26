@@ -71,6 +71,54 @@
         d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM3.5 5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1zM5 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"
       />
     </svg>
+    <span style="position: absolute; bottom: 25%; right: 60%">
+      <svg>
+        <circle
+          r="20"
+          cx="15%"
+          cy="50%"
+          pathlength="100"
+          style="
+            stroke-width: 5;
+            transform: rotate(-90deg);
+            transform-origin: 50%;
+            stroke-dasharray: 100 100;
+            stroke: #aaa;
+          "
+        />
+        <circle
+          r="20"
+          cx="15%"
+          cy="50%"
+          pathlength="100"
+          style="
+            fill: none;
+            stroke-width: 5;
+            transform: rotate(-90deg);
+            transform-origin: 50%;
+            stroke-dasharray: 0 100;
+            stroke: #aaa;
+          "
+        />
+      </svg>
+      
+          <span
+            style="
+              position: absolute;
+              top: 30%;
+              left: 0%;
+              bottom: 0%;
+              right: 0%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font: 12px/1em Verdana;
+              color: white;
+            "
+            >75%</span
+          >
+    </span>
+
     <img
       [src]="item.poster_path | poster"
       alt="item.title"
