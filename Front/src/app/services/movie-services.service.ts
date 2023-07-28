@@ -8,6 +8,7 @@ import { Movie, PeliculasResponse } from '../interface/peliculas.interface';
 })
 export class MovieServicesService {
   private baseURL: string = 'https://api.themoviedb.org/3';
+
   constructor(private _htpp: HttpClient) {}
 
   get params() {

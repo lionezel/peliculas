@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 
 @Component({
@@ -12,9 +13,15 @@ export class MoviesListComponent implements OnInit {
   public order: any;
   public filter_movies = '';
   public percentage_movie: any;
+  public page_arr: any
+ 
 
-  constructor(private _movieServices: MovieServicesService) {
+  constructor(
+    private _movieServices: MovieServicesService,
+    private _router: Router
+  ) {
     this.list_popular_movie();
+
   }
 
   ngOnInit(): void {
@@ -33,7 +40,22 @@ export class MoviesListComponent implements OnInit {
 
   percentage() {
     if (this.percentage_movie >= 7.5) {
-      this.percentage_movie
+      this.percentage_movie;
     }
+  }
+
+  next: number = +1;
+
+  firstpagelinkicon: any
+
+  back: number = 10;
+
+  onPageChange(event: any) {
+      this._movieServices.list_popular_movie().subscribe((response) => {
+        this.page_arr = response.page;
+        console.log(this.page_arr);
+      });
+    this._router.navigate(['/movies/popular'], {queryParams:{page: this.page_arr }})
+
   }
 }

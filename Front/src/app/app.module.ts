@@ -25,7 +25,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipe/filter.pipe';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
-
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { PeopleListComponent } from './components/people/people-list/people-list
     AccordionModule,
     ProgressSpinnerModule,
     DropdownModule,
-    FormsModule  
+    FormsModule  ,
+    PaginatorModule
 
   ],
   schemas: [

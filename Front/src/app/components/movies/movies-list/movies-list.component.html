@@ -50,7 +50,7 @@
 >
   <div
     class="card"
-    *ngFor="let item of movies_arr | filter : filter_movies  "
+    *ngFor="let item of movies_arr | filter : filter_movies"
     routerLink="/movies/{{ item.id }}"
     style="
       cursor: pointer;
@@ -82,7 +82,7 @@
             stroke-width: 5;
             transform: rotate(-90deg);
             transform-origin: 50%;
-            stroke-dasharray: 100 100;
+            stroke-dasharray: 1 100;
             stroke: #ce1212;
           "
         />
@@ -115,7 +115,7 @@
           font: 12px/1em Verdana;
           color: white;
         "
-        >{{ item.vote_average }}%</span
+        >{{ item. vote_average }}%</span
       >
     </span>
 
@@ -134,3 +134,10 @@
     </div>
   </div>
 </div>
+<p-paginator
+  (onPageChange)="onPageChange($event)"
+  [first]="next"
+  [rows]="back"
+  [totalRecords]="120"
+  [rowsPerPageOptions]="[10, 20, 30]"
+></p-paginator>
