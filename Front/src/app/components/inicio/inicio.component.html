@@ -60,15 +60,19 @@
     "
   >
     <div *ngFor="let item of discover_movie_arr">
-      <div class="card" style="width: 10rem; align-items: center">
+      <div
+        class="card"
+        style="width: 10rem; align-items: center; cursor: pointer"
+        routerLink="/movies/{{ item.id }}"
+      >
         <img
           [src]="item.poster_path | poster"
           class="card-img-top"
           alt="..."
           style="width: 100%; height: 200px"
         />
-        <div class="card-body" style="height: 100px;">
-          <h4 class="card-text" style="font-size: 15px;"> 
+        <div class="card-body" style="height: 100px">
+          <h4 class="card-text" style="font-size: 15px">
             {{ item.title }}
           </h4>
           <h5>{{ item.character }}</h5>
