@@ -72,7 +72,7 @@
 
   <p>Reparto principal</p>
 
-  <div style="float: right; margin-right: 10%; margin-top: -2%; gap: 20px">
+  <div style="margin-right: 10%; margin-top: -2%; gap: 20px">
     <i class="pi pi-facebook" style="font-size: 40px"></i>
     <i class="pi pi-twitter" style="font-size: 40px"></i>
     <i class="pi pi-instagram" style="font-size: 40px"></i>
@@ -82,15 +82,15 @@
     style="
       display: flex;
       overflow: scroll;
-      height: 300px;
-      border: 1px solid #111;
+      height: 400px;
       margin-left: 1%;
       gap: 20px;
       width: 75%;
+      align-items: center;
     "
   >
     <div *ngFor="let item of credits_arr">
-      <div class="card" style="width: 18rem; align-items: center">
+      <div class="card" style="width: 10rem; align-items: center">
         <img
           [src]="item.profile_path | poster"
           class="card-img-top"
@@ -98,9 +98,9 @@
           style="width: 100%; height: 200px"
         />
         <div class="card-body">
-          <h2 class="card-text">
+          <h3 class="card-text">
             {{ item.name }}
-          </h2>
+          </h3>
           <h5>{{ item.character }}</h5>
         </div>
       </div>
