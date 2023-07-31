@@ -22,11 +22,7 @@ export class MovieServicesService {
       params: this.params,
     });
   }
-  discover_movie(): Observable<any> {
-    return this._htpp.get(`${this.baseURL}/discover/movie`, {
-      params: this.params,
-    });
-  }
+
 
   detail_movie(id: any): Observable<any> {
     return this._htpp.get(`${this.baseURL}/movie/${id}`, {

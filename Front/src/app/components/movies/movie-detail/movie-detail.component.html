@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 
-<div *ngIf="detail_arr" style="width: 100%; margin: 0">
+<div *ngIf="detail_arr.genres" style="width: 100%; margin: 0">
   <div style="position: relative">
     <img
       [src]="detail_arr.backdrop_path | poster"
@@ -33,13 +33,21 @@
     "
   >
     <p style="font-size: 30px">{{ detail_arr.title }}</p>
+
     <h5>{{ detail_arr.release_date }}</h5>
+
+    <div style="display: flex; position: absolute; top: 25px; right: 55%">
+      <div *ngFor="let item of genres_arr">
+        <h4 style="margin-right: 10px">{{ item.name + "," }}</h4>
+      </div>
+    </div>
+
     <div style="position: relative; left: 20%">
       <i
         class="pi pi-list"
         style="
-          font-size: 25px;
-          margin-right: 20px;
+          font-size: 15px;
+          margin-right: 15px;
           border-radius: 100px;
           background-color: rgb(6, 11, 55);
           padding: 20px;
@@ -48,7 +56,7 @@
       <i
         class="pi pi-heart"
         style="
-          font-size: 25px;
+          font-size: 15px;
           margin-right: 20px;
           border-radius: 100px;
           background-color: rgb(6, 11, 55);
@@ -58,7 +66,7 @@
       <i
         class="pi pi-star"
         style="
-          font-size: 25px;
+          font-size: 15px;
           margin-right: 20px;
           border-radius: 100px;
           background-color: rgb(6, 11, 55);
@@ -70,12 +78,13 @@
     <h3>{{ detail_arr.overview }}</h3>
   </div>
 
-  <p>Reparto principal</p>
-
-  <div style="margin-right: 10%; margin-top: -2%; gap: 20px">
-    <i class="pi pi-facebook" style="font-size: 40px"></i>
-    <i class="pi pi-twitter" style="font-size: 40px"></i>
-    <i class="pi pi-instagram" style="font-size: 40px"></i>
+  <div style="border: 1px solid #111; width: 100%; height: 20px">
+    <p>Reparto principal</p>
+    <div>
+      <i class="pi pi-facebook" style="font-size: 25px"></i>
+      <i class="pi pi-twitter" style="font-size: 25px"></i>
+      <i class="pi pi-instagram" style="font-size: 25px"></i>
+    </div>
   </div>
   <div
     class="container"
@@ -110,8 +119,11 @@
   <div
     style="
       float: right;
+      position: absolute;
+      right: 0%;
+      top: 125%;
       border: 1px solid #111;
-      margin-top: -300px;
+      margin-top: 1%px;
       width: 23%;
       padding: 20px;
     "

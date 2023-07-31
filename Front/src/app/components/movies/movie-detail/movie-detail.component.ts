@@ -11,6 +11,7 @@ import { MovieServicesService } from 'src/app/services/movie-services.service';
 export class MovieDetailComponent {
   public detail_arr: any;
   public credits_arr: any;
+  public genres_arr: any;
 
   constructor(
     private _movieServices: MovieServicesService,
@@ -24,6 +25,11 @@ export class MovieDetailComponent {
       this._movieServices.credits_movie(id).subscribe((response) => {
         console.log(response);
         this.credits_arr = response.cast;
+      });
+
+      this._movieServices.detail_movie(id).subscribe((response) => {
+        this.genres_arr = response.genres;
+        console.log(this.genres_arr);
       });
     });
   }

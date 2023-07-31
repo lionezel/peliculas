@@ -5,9 +5,15 @@ import { MoviesListComponent } from './components/movies/movies-list/movies-list
 import { MovieDetailComponent } from './components/movies/movie-detail/movie-detail.component';
 import { SeriesListComponent } from './components/series/series-list/series-list.component';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent},
+
+  { path: 'login', component: LoginComponent, pathMatch: "full"},
+  { path: 'register', component: RegisterComponent, pathMatch: "full"},
+
   { path: 'movies/popular', component: MoviesListComponent},
   { path: 'movies/:id', component: MovieDetailComponent},
 

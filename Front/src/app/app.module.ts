@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipe/filter.pipe';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { PaginatorModule } from 'primeng/paginator';
     SeriesListComponent,
     FilterPipe,
     PeopleListComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
