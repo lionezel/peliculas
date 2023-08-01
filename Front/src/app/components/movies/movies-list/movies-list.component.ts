@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Movie } from 'src/app/interface/peliculas.interface';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 
 @Component({
@@ -7,34 +8,26 @@ import { MovieServicesService } from 'src/app/services/movie-services.service';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css'],
 })
-export class MoviesListComponent implements OnInit {
-  public movies_arr: any;
+export class MoviesListComponent {
+  public movies_arr: Movie[] = [];
   public sort_by: any;
   public order: any;
   public filter_movies = '';
   public percentage_movie: any;
-  public page_arr: any
- 
+  public page_arr: any;
 
   constructor(
     private _movieServices: MovieServicesService,
     private _router: Router
   ) {
     this.list_popular_movie();
-
   }
 
-  ngOnInit(): void {
-    this.order = [
-      { name: 'Popularidad ddescendente' },
-      { name: 'Popularidad descendente', value: 'Popularidad descendente' },
-    ];
-  }
+
 
   list_popular_movie() {
-    this._movieServices.list_popular_movie().subscribe((response) => {
-      console.log(response);
-      this.movies_arr = response.results;
+    this._movieServices.list_popular_movie().subscribe((movie) => {
+      this.movies_arr = movie;
     });
   }
 
@@ -46,16 +39,7 @@ export class MoviesListComponent implements OnInit {
 
   next: number = +1;
 
-  firstpagelinkicon: any
+  firstpagelinkicon: any;
 
   back: number = 10;
-
-  onPageChange(event: any) {
-      this._movieServices.list_popular_movie().subscribe((response) => {
-        this.page_arr = response.page;
-        console.log(this.page_arr);
-      });
-    this._router.navigate(['/movies/popular'], {queryParams:{page: this.page_arr }})
-
-  }
 }

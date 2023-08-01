@@ -115,14 +115,14 @@
           font: 12px/1em Verdana;
           color: white;
         "
-        >{{ item. vote_average }}%</span
+        >{{ item.vote_average }}%</span
       >
     </span>
 
     <img
       [src]="item.poster_path | poster"
       alt="item.title"
-      style="border-radius: 6px 6px 0px 0px"
+      style="border-radius: 6px 6px 0px 0px; transition: 0.5s ease;"
     />
     <div class="card-body" style="height: 100px">
       <p
@@ -134,10 +134,4 @@
     </div>
   </div>
 </div>
-<p-paginator
-  (onPageChange)="onPageChange($event)"
-  [first]="next"
-  [rows]="back"
-  [totalRecords]="120"
-  [rowsPerPageOptions]="[10, 20, 30]"
-></p-paginator>
+

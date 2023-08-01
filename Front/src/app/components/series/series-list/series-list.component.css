@@ -1,0 +1,8 @@
+
+
+ .card:hover {
+    position: relative;
+    width: 120%;
+    filter: contrast(120%);
+    background-color: aliceblue;
+}
