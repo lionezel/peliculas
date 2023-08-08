@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { combineLatest } from 'rxjs';
+import { Genre, MovieDetails } from 'src/app/interface/pelicula.interface';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class MovieDetailComponent {
     private _movieServices: MovieServicesService,
     private activatedRoute: ActivatedRoute
   ) {
-    const {id} = this.activatedRoute.snapshot.params;
+    const { id } = this.activatedRoute.snapshot.params;
     this._movieServices.detail_movie(id).subscribe((response) => {
       console.log(response);
       this.detail_arr = response;
@@ -28,7 +29,7 @@ export class MovieDetailComponent {
       });
 
       this._movieServices.detail_movie(id).subscribe((response) => {
-        this.genres_arr = response.genres;
+        this.genres_arr = response;
         console.log(this.genres_arr);
       });
     });
