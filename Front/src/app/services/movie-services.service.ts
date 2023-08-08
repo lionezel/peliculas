@@ -37,6 +37,17 @@ export class MovieServicesService {
       .pipe(map((res) => res.results));
   }
 
+  list_upcoming_movie(page: number): Observable<any> {
+    return this._htpp
+      .get<PeliculasResponse>(
+        `${this.baseURL}/movie/upcoming?page=${page}`,
+        {
+          params: this.params,
+        }
+      )
+      .pipe(map((res) => res.results));
+  }
+
   detail_movie(id: any): Observable<MovieDetails[]> {
     return this._htpp
       .get<MovieDetails[]>(`${this.baseURL}/movie/${id}`, {

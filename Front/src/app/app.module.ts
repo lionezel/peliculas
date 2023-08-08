@@ -35,6 +35,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DropdownModule } from 'primeng/dropdown';
 import { PaginatorModule } from 'primeng/paginator';
 import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
+import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playi
     SearchPageComponent,
     PopularPageComponent,
     NowPlayingPageComponent,
+    UpcomingPageComponent,
   ],
   imports: [
     BrowserModule,
