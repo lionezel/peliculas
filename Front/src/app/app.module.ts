@@ -36,6 +36,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PaginatorModule } from 'primeng/paginator';
 import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
 import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
+import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.
     PopularPageComponent,
     NowPlayingPageComponent,
     UpcomingPageComponent,
+    TopRatedPageComponent,
   ],
   imports: [
     BrowserModule,

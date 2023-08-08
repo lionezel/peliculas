@@ -10,6 +10,7 @@ import { SearchPageComponent } from './page/search-page/search-page.component';
 import { PopularPageComponent } from './page/movie/popular-page/popular-page.component';
 import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
 import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
+import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'movies/popular', component: PopularPageComponent },
   { path: 'movies/now_playing', component: NowPlayingPageComponent },
   { path: 'movies/upcoming', component: UpcomingPageComponent },
+  { path: 'movies/top_rated', component: TopRatedPageComponent },
   { path: 'movies/:id', component: MovieDetailComponent },
 
   { path: 'series/popular', component: SeriesListComponent },

@@ -39,12 +39,17 @@ export class MovieServicesService {
 
   list_upcoming_movie(page: number): Observable<any> {
     return this._htpp
-      .get<PeliculasResponse>(
-        `${this.baseURL}/movie/upcoming?page=${page}`,
-        {
-          params: this.params,
-        }
-      )
+      .get<PeliculasResponse>(`${this.baseURL}/movie/upcoming?page=${page}`, {
+        params: this.params,
+      })
+      .pipe(map((res) => res.results));
+  }
+
+  list_top_rated_movie(page: number): Observable<any> {
+    return this._htpp
+      .get<PeliculasResponse>(`${this.baseURL}/movie/top_rated?page=${page}`, {
+        params: this.params,
+      })
       .pipe(map((res) => res.results));
   }
 
