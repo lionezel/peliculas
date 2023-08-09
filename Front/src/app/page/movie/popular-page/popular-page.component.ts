@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 
 @Component({
@@ -9,15 +8,18 @@ import { MovieServicesService } from 'src/app/services/movie-services.service';
 })
 export class PopularPageComponent {
   public movies_arr: any;
+  public movies: any;
   public filter_movies = '';
   public page = 1;
   public percentage_movie: any;
 
   constructor(
     private _movieServices: MovieServicesService,
-    private _router: Router
   ) {
     this.list_popular_movie();
+  }
+
+  ngOnInit() {
   }
 
   list_popular_movie() {
@@ -39,8 +41,9 @@ export class PopularPageComponent {
 
   onPageChange() {
     this._movieServices.list_popular_movie(this.page).subscribe((movie) => {
-      this.movies_arr = movie;
-      console.log(this.movies_arr);
+      this.movies = movie.page;
+      console.log(this.movies);
     });
   }
+
 }

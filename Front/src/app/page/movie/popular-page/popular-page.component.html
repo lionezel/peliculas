@@ -13,7 +13,10 @@
 
 <div class="" style="float: left; width: 30%; padding: 30px">
   <p-accordion [multiple]="true" [activeIndex]="[0]">
-    <p-accordionTab header="Ordenar"> </p-accordionTab>
+    <p-accordionTab header="Ordenar">
+      <div class="card flex justify-content-center">
+      </div>
+    </p-accordionTab>
     <p-accordionTab header="Dónde se puede ver">
       <p>
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -122,7 +125,7 @@
     <img
       [src]="item.poster_path | poster"
       alt="item.title"
-      style="border-radius: 6px 6px 0px 0px; transition: 0.5s ease;"
+      style="border-radius: 6px 6px 0px 0px; transition: 0.5s ease"
     />
     <div class="card-body" style="height: 100px">
       <p
@@ -135,7 +138,12 @@
   </div>
 </div>
 
-
 <div class="card flex justify-content-center">
-  <p-paginator (onPageChange)="onPageChange()" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+  <p-paginator
+    (onPageChange)="onPageChange()"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="120"
+    [rowsPerPageOptions]="[10, 20, 30]"
+  ></p-paginator>
 </div>

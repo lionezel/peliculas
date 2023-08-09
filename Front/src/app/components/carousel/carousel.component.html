@@ -1,0 +1,27 @@
+<div style="border: 1px solid #111">
+  <p-carousel
+    [value]="items"
+    [numVisible]="5"
+    [numScroll]="1"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-items pTemplate="item" style="border: 1px solid #111">
+      <div
+        style="width: 100%"
+        class="border-1 surface-border border-round m-1 text-center py-1 px-1"
+      >
+        <div class="mb-3">
+          <img
+            [src]="items.poster_path | poster"
+            [alt]="items.name"
+            class="w-6 shadow-2"
+            style="width: 100%; border-radius: 15px"
+          />
+        </div>
+        <div>
+          <h4 class="mb-1">{{ items.title }}</h4>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

@@ -14,12 +14,17 @@ export class InicioService {
   get params() {
     return {
       api_key: 'b917f330fabefefa9f236c84ad4c1179',
-      page: 1,
     };
   }
 
   discover_movie(): Observable<any> {
     return this._htpp.get(`${this.baseURL}/discover/movie`, {
+      params: this.params,
+    });
+  }
+
+  discover_serie(): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/discover/tv`, {
       params: this.params,
     });
   }
