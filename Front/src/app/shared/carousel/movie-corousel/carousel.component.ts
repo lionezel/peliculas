@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { InicioService } from 'src/app/services/inicio.service';
 
 @Component({
   selector: 'app-carousel',
@@ -8,9 +7,6 @@ import { InicioService } from 'src/app/services/inicio.service';
 })
 export class CarouselComponent implements OnInit {
   public responsiveOptions: any[] | undefined;
-
-  constructor(private _inicioServices: InicioService) {}
-
   @Input() items: any;
 
   ngOnInit(): void {

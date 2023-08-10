@@ -37,7 +37,9 @@ import { PaginatorModule } from 'primeng/paginator';
 import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
 import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
 import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
-import { CarouselComponent } from './shared/carousel/carousel.component';
+import { CarouselComponent } from './shared/carousel/movie-corousel/carousel.component';
+import { PeopleCarouselComponent } from './shared/carousel/people-carousel/people-carousel.component';
+import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
     UpcomingPageComponent,
     TopRatedPageComponent,
     CarouselComponent,
+    PeopleCarouselComponent,
+    MileSeparatorPipe,
   ],
   imports: [
     BrowserModule,
