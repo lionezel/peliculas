@@ -78,34 +78,33 @@
     <h3>{{ detail_arr.overview }}</h3>
   </div>
 
-  <div style="border: 1px solid #111; width: 100%;">
+  <div style="border: 1px solid #111; width: 100%">
     <p>Reparto principal</p>
   </div>
 
-    <app-people-carousel [items]="credits_arr"></app-people-carousel>
+  <app-people-carousel [items]="credits_arr"></app-people-carousel>
 
-    <div
-      style="
-        position: absolute;
-        right: 0%;
-        top: 125%;
-        border: 1px solid #111;
-        margin-top: 1%px;
-        width: 23%;
-        padding: 20px;
-      "
-    >
-      <h2>Estado</h2>
-      <h4>{{ detail_arr.status }}</h4>
+  <div
+    style="
+      position: absolute;
+      right: 0%;
+      top: 125%;
+      border: 1px solid #111;
+      margin-top: 1%px;
+      width: 23%;
+      padding: 20px;
+    "
+  >
+    <h2>Estado</h2>
+    <h4>{{ detail_arr.status }}</h4>
 
-      <h2>Idioma original</h2>
-      <h4>{{ detail_arr.original_language }}</h4>
-      <h2>Presupuesto</h2>
-      <h4>$ {{ detail_arr.budget | mileSeparator }} </h4>
-      <h2>Ingresos</h2>
-      <h4>$ {{ detail_arr.revenue }}</h4>
-    </div>
+    <h2>Idioma original</h2>
+    <h4>{{ detail_arr.original_language }}</h4>
+    <h2>Presupuesto</h2>
+    <h4>$ {{ detail_arr.budget | mileSeparator }}</h4>
+    <h2>Ingresos</h2>
+    <h4>$ {{ detail_arr.revenue | mileSeparator }}</h4>
   </div>
+</div>
 
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
