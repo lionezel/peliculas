@@ -1,21 +1,21 @@
-<div style="border: 1px solid #111">
+<div>
   <p-carousel
     [value]="items"
-    [numVisible]="5"
+    [numVisible]="7"
     [numScroll]="1"
     [responsiveOptions]="responsiveOptions"
   >
-    <ng-template let-items pTemplate="item" style="border: 1px solid #111">
+    <ng-template let-items pTemplate="item">
       <div
-        style="width: 100%"
         class="border-1 surface-border border-round m-1 text-center py-1 px-1"
       >
-        <div class="mb-3">
+        <div class="mb-3" style="width: 100%">
           <img
             [src]="items.poster_path | poster"
             [alt]="items.name"
             class="w-6 shadow-2"
-            style="width: 100%; border-radius: 15px"
+            style="width: 100%; border-radius: 15px; cursor: pointer"
+            routerLink="/movies/{{ items.id }}"
           />
         </div>
         <div>
