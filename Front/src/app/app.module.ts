@@ -20,7 +20,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { SearchPageComponent } from './page/search-page/search-page.component';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
-import { SeriesListComponent } from './components/series/series-list/series-list.component';
 import { MovieDetailComponent } from './shared/movie-detail/movie-detail.component';
 import { PopularPageComponent } from './page/movie/popular-page/popular-page.component';
 
@@ -40,6 +39,8 @@ import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-pag
 import { CarouselComponent } from './shared/carousel/movie-corousel/carousel.component';
 import { PeopleCarouselComponent } from './shared/carousel/people-carousel/people-carousel.component';
 import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
+import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
+import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,6 @@ import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
     NavComponent,
     PosterPipe,
     MovieDetailComponent,
-    SeriesListComponent,
     FilterPipe,
     PeopleListComponent,
     RegisterComponent,
@@ -61,6 +61,8 @@ import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
     CarouselComponent,
     PeopleCarouselComponent,
     MileSeparatorPipe,
+    AiringTodayPageComponent,
+    PopularSeriePageComponent,
   ],
   imports: [
     BrowserModule,

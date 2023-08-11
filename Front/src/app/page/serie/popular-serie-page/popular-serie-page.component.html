@@ -51,24 +51,20 @@
     margin: 20px;
   "
 >
-<div
-class="card"
-*ngFor="let item of popular_serie_arr"
-routerLink="/movies/{{ item.id }}"
-style="
-      cursor: pointer;
-      box-shadow: 5px 8px 12px rgb(203, 200, 200); 
-    "
+  <div
+    class="card"
+    *ngFor="let item of popular_serie_arr"
+    routerLink="/movies/{{ item.id }}"
+    style="cursor: pointer; box-shadow: 5px 8px 12px rgb(203, 200, 200)"
   >
-  <img
-    [src]="item.poster_path | poster"
-    alt="item.title"
-    style="
-      border-radius: 6px 6px 0px 0px;
-      cursor: pointer;
-      transition: 10s ease;
-    "
-  />
-  
+    <img
+      [src]="item.poster_path | poster"
+      alt="item.title"
+      style="
+        border-radius: 6px 6px 0px 0px;
+        cursor: pointer;
+        transition: 10s ease;
+      "
+    />
   </div>
 </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './page/home/inicio/inicio.component';
 import { MovieDetailComponent } from './shared/movie-detail/movie-detail.component';
-import { SeriesListComponent } from './components/series/series-list/series-list.component';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -11,6 +10,7 @@ import { PopularPageComponent } from './page/movie/popular-page/popular-page.com
 import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
 import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
 import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
+import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -26,10 +26,10 @@ const routes: Routes = [
   { path: 'movies/top_rated', component: TopRatedPageComponent },
   { path: 'movies/:id', component: MovieDetailComponent },
 
-  { path: 'series/popular', component: SeriesListComponent },
-  { path: 'series/airing_today', component: SeriesListComponent },
-  { path: 'series/on_the_air', component: SeriesListComponent },
-  { path: 'series/top_rated', component: SeriesListComponent },
+  { path: 'series/popular', component: PopularSeriePageComponent },
+  { path: 'series/airing_today', component: PopularPageComponent },
+  { path: 'series/on_the_air', component: PopularPageComponent },
+  { path: 'series/top_rated', component: PopularPageComponent },
 
   { path: 'people/popular', component: PeopleListComponent },
 ];
