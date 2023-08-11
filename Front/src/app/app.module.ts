@@ -42,6 +42,7 @@ import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
 import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
 import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
 import { CardSerieComponent } from './page/serie/card-serie/card-serie.component';
+import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { CardSerieComponent } from './page/serie/card-serie/card-serie.component
     AiringTodayPageComponent,
     PopularSeriePageComponent,
     CardSerieComponent,
+    OnTheAirPageComponent,
   ],
   imports: [
     BrowserModule,

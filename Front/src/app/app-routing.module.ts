@@ -12,6 +12,7 @@ import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.
 import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
 import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
 import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
+import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
 
   { path: 'series/popular', component: PopularSeriePageComponent },
   { path: 'series/airing_today', component: AiringTodayPageComponent },
-  { path: 'series/on_the_air', component: PopularPageComponent },
+  { path: 'series/on_the_air', component: OnTheAirPageComponent },
   { path: 'series/top_rated', component: PopularPageComponent },
 
   { path: 'people/popular', component: PeopleListComponent },
