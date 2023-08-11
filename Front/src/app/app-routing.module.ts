@@ -11,6 +11,7 @@ import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playi
 import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
 import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
 import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
+import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'movies/:id', component: MovieDetailComponent },
 
   { path: 'series/popular', component: PopularSeriePageComponent },
-  { path: 'series/airing_today', component: PopularPageComponent },
+  { path: 'series/airing_today', component: AiringTodayPageComponent },
   { path: 'series/on_the_air', component: PopularPageComponent },
   { path: 'series/top_rated', component: PopularPageComponent },
 

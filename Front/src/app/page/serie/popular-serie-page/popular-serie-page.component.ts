@@ -17,7 +17,6 @@ export class PopularSeriePageComponent implements OnInit {
 
   list_popular_serie() {
     this._serieServices.list_popular_series().subscribe((response) => {
-      console.log(response);
       this.popular_serie_arr = response.results;
     });
   }
