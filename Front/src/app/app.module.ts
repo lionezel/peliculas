@@ -41,6 +41,7 @@ import { PeopleCarouselComponent } from './shared/carousel/people-carousel/peopl
 import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
 import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
 import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
+import { CardSerieComponent } from './page/serie/card-serie/card-serie.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popul
     MileSeparatorPipe,
     AiringTodayPageComponent,
     PopularSeriePageComponent,
+    CardSerieComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<div
+  class="card"
+  routerLink="/movies/{{ items.id }}"
+  style="cursor: pointer; box-shadow: 5px 8px 12px rgb(203, 200, 200)"
+>
+  <img
+    [src]="items.poster_path | poster"
+    alt="item.title"
+    style="
+      border-radius: 6px 6px 0px 0px;
+      cursor: pointer;
+      transition: 10s ease;
+    "
+  />
+  <div class="card-body" style="height: 100px">
+    <p
+      class="card-title"
+      style="text-align: center; font-size: 15px; margin-top: 15px"
+    >
+      {{ items.name }}
+    </p>
+  </div>
+</div>
