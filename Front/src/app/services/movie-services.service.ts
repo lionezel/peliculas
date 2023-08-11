@@ -66,4 +66,10 @@ export class MovieServicesService {
       params: this.params,
     });
   }
+
+  keyword_movie(id: any): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/movie/${id}/keywords`, {
+      params: this.params,
+    });
+  }
 }

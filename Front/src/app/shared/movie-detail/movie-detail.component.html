@@ -78,33 +78,49 @@
     <h3>{{ detail_arr.overview }}</h3>
   </div>
 
-  <div style="border: 1px solid #111; width: 100%">
+  <div
+    style="
+      width: 100%;
+      margin-left: 60px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 30px;
+    "
+  >
     <p>Reparto principal</p>
   </div>
 
   <app-people-carousel [items]="credits_arr"></app-people-carousel>
 
-  <div
-    style="
-      position: absolute;
-      right: 0%;
-      top: 125%;
-      border: 1px solid #111;
-      margin-top: 1%px;
-      width: 23%;
-      padding: 20px;
-    "
-  >
+  <span style="float: right; position: absolute; top: 120%; left: 80%">
+    <h2>Título original</h2>
+    <h4>{{ detail_arr.original_title }}</h4>
+
     <h2>Estado</h2>
     <h4>{{ detail_arr.status }}</h4>
-
     <h2>Idioma original</h2>
     <h4>{{ detail_arr.original_language }}</h4>
     <h2>Presupuesto</h2>
     <h4>$ {{ detail_arr.budget | mileSeparator }}</h4>
     <h2>Ingresos</h2>
     <h4>$ {{ detail_arr.revenue | mileSeparator }}</h4>
-  </div>
-</div>
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h2 style="margin-top: 60px">Palabras clave</h2>
+    <div *ngFor="let item of keyword_arr">
+      <h5
+        style="
+          background-color: #e5e5e5;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        "
+      >
+        {{ item.name }}
+      </h5>
+    </div>
+  </span>
+
+  
+  <app-carousel [items]=""></app-carousel>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
