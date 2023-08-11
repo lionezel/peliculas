@@ -43,6 +43,7 @@ import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-
 import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
 import { CardSerieComponent } from './page/serie/card-serie/card-serie.component';
 import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
+import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-p
     PopularSeriePageComponent,
     CardSerieComponent,
     OnTheAirPageComponent,
+    TopRatedSeriePageComponent,
   ],
   imports: [
     BrowserModule,
