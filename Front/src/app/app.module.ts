@@ -44,6 +44,7 @@ import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popul
 import { CardSerieComponent } from './page/serie/card-serie/card-serie.component';
 import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
 import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
+import { SerieDetailComponent } from './shared/serie-detail/serie-detail.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/to
     CardSerieComponent,
     OnTheAirPageComponent,
     TopRatedSeriePageComponent,
+    SerieDetailComponent,
   ],
   imports: [
     BrowserModule,
