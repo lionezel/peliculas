@@ -14,6 +14,7 @@ export class MovieDetailComponent {
   public credits_arr: any;
   public genres_arr: any;
   public keyword_arr: any;
+  public recommendations_arr: any;
 
   constructor(
     private _movieServices: MovieServicesService,
@@ -23,7 +24,6 @@ export class MovieDetailComponent {
 
     //detail
     this._movieServices.detail_movie(id).subscribe((response) => {
-      console.log(response);
       this.detail_arr = response;
 
       //reparto
@@ -32,14 +32,17 @@ export class MovieDetailComponent {
       });
 
       //category
-      this._movieServices.detail_movie(id).subscribe((response) => {
-        console.log(this.genres_arr);
-      });
+      this._movieServices.detail_movie(id).subscribe((response) => {});
 
       //keyword
       this._movieServices.keyword_movie(id).subscribe((response) => {
         this.keyword_arr = response.keywords;
-        console.log(this.keyword_arr);
+      });
+
+      //Recommendations
+      this._movieServices.recommendations_movie(id).subscribe((response) => {
+        console.log(response);
+        this.recommendations_arr = response.results;
       });
     });
   }

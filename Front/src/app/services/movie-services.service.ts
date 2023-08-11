@@ -72,4 +72,10 @@ export class MovieServicesService {
       params: this.params,
     });
   }
+
+  recommendations_movie(id: any): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/movie/${id}/recommendations`, {
+      params: this.params,
+    });
+  }
 }
