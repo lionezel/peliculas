@@ -44,4 +44,24 @@ export class serieService {
       params: this.params,
     });
   }
+
+  detail_series(id: string): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/${id}`, {
+      params: this.params,
+    });
+  }
+
+  detail_credits_series(id: string): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/${id}/credits`, {
+      params: this.params,
+    });
+  }
+
+  detail_recommendations_series(id: string): Observable<any> {
+    return this._htpp.get(`${this.baseURL}/tv/${id}/recommendations`, {
+      params: this.params,
+    });
+  }
+
+  
 }

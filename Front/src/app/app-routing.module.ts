@@ -14,6 +14,7 @@ import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popul
 import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
 import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
 import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
+import { SerieDetailComponent } from './shared/serie-detail/serie-detail.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'series/airing_today', component: AiringTodayPageComponent },
   { path: 'series/on_the_air', component: OnTheAirPageComponent },
   { path: 'series/top_rated', component: TopRatedSeriePageComponent },
+  { path: 'series/:id', component: SerieDetailComponent },
 
   { path: 'people/popular', component: PeopleListComponent },
 ];

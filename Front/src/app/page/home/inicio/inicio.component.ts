@@ -1,6 +1,7 @@
 import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeSearchService } from 'src/app/services/home-search.service';
 import { InicioService } from 'src/app/services/inicio.service';
 import { MovieServicesService } from 'src/app/services/movie-services.service';
 import { serieService } from 'src/app/services/serie.service';
@@ -19,7 +20,7 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private _inicioServices: InicioService,
-    private _serieServices: serieService,
+    private _search_home: HomeSearchService,
     private _router: Router
   ) {}
   ngOnInit(): void {
@@ -41,10 +42,9 @@ export class InicioComponent implements OnInit {
   search_movie() {
     this._router.navigate(['/search']);
     if (this.filter.trim()) {
-      this._inicioServices.search_movie(this.filter).subscribe((response) => {
-        console.log(response);
+      this._search_home.disparador.emit({
+        data: this.filter,
       });
     }
   }
-
 }

@@ -1,1 +1,106 @@
-<p>serie-detail works!</p>
+<app-nav></app-nav>
+
+<div *ngIf="detail_arr" style="width: 100%; margin: 0">
+  <div style="position: relative">
+    <img
+      [src]="detail_arr.backdrop_path | poster"
+      alt=""
+      style="opacity: 1; filter: brightness(60%); height: 700px; width: 100%"
+    />
+  </div>
+
+  <img
+    [src]="detail_arr.poster_path | poster"
+    class="card-img-top"
+    alt="..."
+    style="
+      height: 450px;
+      margin-left: 2%;
+      position: absolute;
+      top: 18%;
+      width: 25%;
+      border-radius: 10px;
+    "
+  />
+
+  <div
+    style="
+      margin-top: 10%;
+      margin-left: 30%;
+      position: absolute;
+      top: 0%;
+      color: white;
+    "
+  >
+    <p style="font-size: 30px">{{ detail_arr.name }}</p>
+
+    <h5>{{ detail_arr.last_air_date }}</h5>
+
+    <div style="display: flex; position: absolute; top: 25px; right: 55%">
+      <div *ngFor="let item of genres_arr">
+        <h4 style="margin-right: 10px">{{ item.name + "," }}</h4>
+      </div>
+    </div>
+
+    <div style="position: relative; left: 0%"></div>
+    <h1>Vista general</h1>
+    <h3>{{ detail_arr.overview }}</h3>
+  </div>
+
+  <div
+    style="
+      width: 50%;
+      margin-left: 60px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 30px;
+    "
+  >
+    <p>Reparto principal</p>
+  </div>
+
+  <app-people-carousel [items]="credits_arr"></app-people-carousel>
+
+  <span style="float: right; position: absolute; top: 120%; left: 80%">
+    <h2>Título original</h2>
+    <h4>{{ detail_arr.original_title }}</h4>
+    <h2>Estado</h2>
+    <h4>{{ detail_arr.status }}</h4>
+    <h2>Canal</h2>
+    <img [src]="detail_arr.logo_path | poster " alt="" style="width: 10000px;" />
+    <h2>Tipo</h2>
+    <h4>{{ detail_arr.revenue }}</h4>
+    <h2>Idioma original</h2>
+    <h4>{{ detail_arr.original_language }}</h4>
+
+    <h2 style="margin-top: 60px">Palabras clave</h2>
+    <div *ngFor="let item of keyword_arr">
+      <h5
+        style="
+          background-color: #e5e5e5;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        "
+      >
+        {{ item.name }}
+      </h5>
+    </div>
+  </span>
+
+  <div style="width: 75%">
+    <h2
+      style="
+        width: 100%;
+        margin-left: 60px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 30px;
+      "
+    >
+      Recomendaciones
+    </h2>
+    <app-carousel [items]="recommendations_arr"></app-carousel>
+  </div>
+
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
