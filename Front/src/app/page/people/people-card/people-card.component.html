@@ -1,1 +1,7 @@
-<p>people-card works!</p>
+<img
+  [src]="item.profile_path | poster"
+  alt="item.title"
+  style="border-radius: 6px 6px 0px 0px; transition: 0.5s ease"
+/>
+
+<span>{{ item.name }}</span>

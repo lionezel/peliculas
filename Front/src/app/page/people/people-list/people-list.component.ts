@@ -7,6 +7,8 @@ import { PeopleService } from 'src/app/services/people.service';
   styleUrls: ['./people-list.component.css'],
 })
 export class PeopleListComponent implements OnInit {
+  public People_arr: any;
+
   constructor(private _people: PeopleService) {}
 
   ngOnInit(): void {
@@ -16,6 +18,7 @@ export class PeopleListComponent implements OnInit {
   getAllPeople() {
     this._people.list_popular_people().subscribe((response) => {
       console.log(response);
+      this.People_arr = response.results;
     });
   }
 }

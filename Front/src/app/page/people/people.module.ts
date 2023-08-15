@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PeopleListComponent } from './people-list/people-list.component';
 import { PeopleCardComponent } from './people-card/people-card.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { PipeModule } from 'src/app/pipe/pipe.module';
 
 
 
@@ -11,7 +13,9 @@ import { PeopleCardComponent } from './people-card/people-card.component';
     PeopleCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    PipeModule
   ]
 })
 export class PeopleModule { }
