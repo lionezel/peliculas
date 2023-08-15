@@ -1,2 +1,7 @@
 <app-nav></app-nav>
 
+<div *ngFor="let item of filter_search">
+  <img [src]="item.poster_path | poster" alt="" />
+  <div>{{item.title}}</div>
+</div>
+

@@ -1,10 +1,7 @@
-import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { HomeSearchService } from 'src/app/services/home-search.service';
 import { InicioService } from 'src/app/services/inicio.service';
-import { MovieServicesService } from 'src/app/services/movie-services.service';
-import { serieService } from 'src/app/services/serie.service';
 
 @Component({
   selector: 'app-inicio',

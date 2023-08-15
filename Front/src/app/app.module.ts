@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -12,67 +12,22 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-//COMPONENTS
 import { AppComponent } from './app.component';
-import { InicioComponent } from './page/home/inicio/inicio.component';
-import { NavComponent } from './shared/nav/nav.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
-import { SearchPageComponent } from './page/search-page/search-page.component';
-import { PeopleListComponent } from './components/people/people-list/people-list.component';
-import { MovieDetailComponent } from './shared/movie-detail/movie-detail.component';
-import { PopularPageComponent } from './page/movie/popular-page/popular-page.component';
 
-//PIPE
-import { PosterPipe } from './pipe/poster.pipe';
-import { FilterPipe } from './pipe/filter.pipe';
-
-//PRIMENG
-import { CarouselModule } from 'primeng/carousel';
-import { AccordionModule } from 'primeng/accordion';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { DropdownModule } from 'primeng/dropdown';
-import { PaginatorModule } from 'primeng/paginator';
-import { NowPlayingPageComponent } from './page/movie/now-playing-page/now-playing-page.component';
-import { UpcomingPageComponent } from './page/movie/upcoming-page/upcoming-page.component';
-import { TopRatedPageComponent } from './page/movie/top-rated-page/top-rated-page.component';
-import { CarouselComponent } from './shared/carousel/movie-corousel/carousel.component';
-import { PeopleCarouselComponent } from './shared/carousel/people-carousel/people-carousel.component';
-import { MileSeparatorPipe } from './pipe/mile-separator.pipe';
-import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-today-page.component';
-import { PopularSeriePageComponent } from './page/serie/popular-serie-page/popular-serie-page.component';
-import { CardSerieComponent } from './page/serie/card-serie/card-serie.component';
-import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
-import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
-import { SerieDetailComponent } from './shared/serie-detail/serie-detail.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { PageModule } from './page/page.module';
+import { PipeModule } from './pipe/pipe.module';
+import { SharedModule } from './shared/shared.module';
+import { NgPrimeModule } from './ng-prime/ng-prime.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InicioComponent,
-    NavComponent,
-    PosterPipe,
-    MovieDetailComponent,
-    FilterPipe,
-    PeopleListComponent,
-    RegisterComponent,
-    LoginComponent,
-    SearchPageComponent,
-    PopularPageComponent,
-    NowPlayingPageComponent,
-    UpcomingPageComponent,
-    TopRatedPageComponent,
-    CarouselComponent,
-    PeopleCarouselComponent,
-    MileSeparatorPipe,
-    AiringTodayPageComponent,
-    PopularSeriePageComponent,
-    CardSerieComponent,
-    OnTheAirPageComponent,
-    TopRatedSeriePageComponent,
-    SerieDetailComponent,
-  ],
+  declarations: [AppComponent] ,
   imports: [
+    PageModule,
+    PipeModule,
+    SharedModule,
+    NgPrimeModule,
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -83,12 +38,10 @@ import { SerieDetailComponent } from './shared/serie-detail/serie-detail.compone
     MatButtonModule,
     MatIconModule,
     MatExpansionModule,
-    CarouselModule,
-    AccordionModule,
-    ProgressSpinnerModule,
-    DropdownModule,
     FormsModule,
-    PaginatorModule,
+    YouTubePlayerModule,
+
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

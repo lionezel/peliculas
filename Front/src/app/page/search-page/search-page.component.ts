@@ -8,7 +8,7 @@ import { InicioService } from 'src/app/services/inicio.service';
   styleUrls: ['./search-page.component.css'],
 })
 export class SearchPageComponent implements OnInit {
-  public data: string = '';
+  public filter_search: any;
 
   constructor(
     private _home_search: HomeSearchService,
@@ -18,7 +18,8 @@ export class SearchPageComponent implements OnInit {
   ngOnInit(): void {
     this._home_search.disparador.subscribe((data) => {
       this._inicioServices.search_movie(data).subscribe((response) => {
-        console.log(response);
+        this.filter_search = response.results;
+        console.log(this.filter_search);
       });
     });
   }
