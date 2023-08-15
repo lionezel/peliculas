@@ -7,8 +7,8 @@ import { HomeModule } from './home/home.module';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { SerieModule } from './serie/serie.module';
 import { SharedModule } from '../shared/shared.module';
+
 import { PipeModule } from '../pipe/pipe.module';
-import { AcountUserModule } from './acount-user/acount-user.module';
 
 @NgModule({
   declarations: [SearchPageComponent],
@@ -19,14 +19,7 @@ import { AcountUserModule } from './acount-user/acount-user.module';
     SerieModule,
     SharedModule,
     PipeModule,
-    AcountUserModule,
   ],
-  exports: [
-    HomeModule,
-    MovieModule,
-    SerieModule,
-    SearchPageComponent,
-    AcountUserModule,
-  ],
+  exports: [HomeModule, MovieModule, SerieModule, SearchPageComponent],
 })
 export class PageModule {}
