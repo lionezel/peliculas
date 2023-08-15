@@ -21,7 +21,7 @@ import { SharedModule } from './shared/shared.module';
 import { NgPrimeModule } from './ng-prime/ng-prime.module';
 
 @NgModule({
-  declarations: [AppComponent] ,
+  declarations: [AppComponent],
   imports: [
     PageModule,
     PipeModule,
@@ -40,8 +40,6 @@ import { NgPrimeModule } from './ng-prime/ng-prime.module';
     MatExpansionModule,
     FormsModule,
     YouTubePlayerModule,
-
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
