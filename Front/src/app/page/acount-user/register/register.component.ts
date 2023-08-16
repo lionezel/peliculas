@@ -16,9 +16,14 @@ export class RegisterComponent {
 
   register() {
     const user = { email: this.email, password: this.password };
-    this._userServices.register(user).subscribe((data) => {
-      this._userServices.setToken(data.token);
-      this._router.navigateByUrl('/');
-    });
+    this._userServices.register(user).subscribe(
+      (data) => {
+        this._userServices.setToken(data.token);
+        this._router.navigateByUrl('/');
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
