@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeSearchService } from 'src/app/services/home-search.service';
 import { InicioService } from 'src/app/services/inicio.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-inicio',
@@ -17,12 +18,14 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private _inicioServices: InicioService,
+    private _userServices: UserService,
     private _search_home: HomeSearchService,
     private _router: Router
   ) {}
   ngOnInit(): void {
     this.discover_serie();
     this.discover_movie();
+    this.getUserLogged();
   }
   discover_movie() {
     this._inicioServices.discover_movie().subscribe((response) => {
@@ -43,5 +46,11 @@ export class InicioComponent implements OnInit {
         data: this.filter,
       });
     }
+  }
+
+  getUserLogged() {
+    this._userServices.getUser().subscribe((response) => {
+      console.log(response);
+    });
   }
 }

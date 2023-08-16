@@ -14,9 +14,14 @@ import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-p
 import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
 import { SerieDetailComponent } from './shared/serie-detail/serie-detail.component';
 import { PeopleListComponent } from './page/people/people-list/people-list.component';
+import { LoginComponent } from './page/acount-user/login/login.component';
+import { RegisterComponent } from './page/acount-user/register/register.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 
   { path: 'search', component: SearchPageComponent },
 
