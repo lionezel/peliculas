@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { PipeModule } from '../pipe/pipe.module';
 import { PeopleModule } from './people/people.module';
-
+import { AcountUserModule } from './acount-user/acount-user.module';
 
 @NgModule({
   declarations: [SearchPageComponent],
@@ -21,8 +21,15 @@ import { PeopleModule } from './people/people.module';
     SerieModule,
     SharedModule,
     PipeModule,
-    PeopleModule
+    PeopleModule,
+    AcountUserModule,
   ],
-  exports: [HomeModule, MovieModule, SerieModule, SearchPageComponent],
+  exports: [
+    HomeModule,
+    MovieModule,
+    SerieModule,
+    SearchPageComponent,
+    AcountUserModule,
+  ],
 })
 export class PageModule {}
