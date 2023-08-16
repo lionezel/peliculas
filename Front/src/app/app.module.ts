@@ -16,9 +16,10 @@ import { AppComponent } from './app.component';
 
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { PageModule } from './page/page.module';
-import { PipeModule } from './pipe/pipe.module';
+
 import { SharedModule } from './shared/shared.module';
 import { NgPrimeModule } from './ng-prime/ng-prime.module';
+import { PipeModule } from './pipe/pipe.module';
 
 @NgModule({
   declarations: [AppComponent],

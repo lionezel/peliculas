@@ -13,6 +13,7 @@ import { AiringTodayPageComponent } from './page/serie/airing-today-page/airing-
 import { OnTheAirPageComponent } from './page/serie/on-the-air-page/on-the-air-page.component';
 import { TopRatedSeriePageComponent } from './page/serie/top-rated-serie-page/top-rated-serie-page.component';
 import { SerieDetailComponent } from './shared/serie-detail/serie-detail.component';
+import { PeopleListComponent } from './page/people/people-list/people-list.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'series/top_rated', component: TopRatedSeriePageComponent },
   { path: 'series/:id', component: SerieDetailComponent },
 
+  { path: 'people', component: PeopleListComponent },
 ];
 
 @NgModule({

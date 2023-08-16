@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PipeModule } from '../pipe/pipe.module';
 import { PeopleModule } from './people/people.module';
 
+
 @NgModule({
   declarations: [SearchPageComponent],
   imports: [
