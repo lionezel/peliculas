@@ -1,22 +1,67 @@
 <app-nav></app-nav>
 
-<div class="login">
-    <form class="custom-form" method="post">
+<div
+  style="
+    background: url(../../../../assets/Wall-e.jfif) no-repeat center center
+      fixed;
+    background-size: cover;
+    color: white;
+    height: 89.4%;
+    position: absolute;
+    width: 100%;
+  "
+>
+  <div
+    class="login"
+    style="
+      width: 40%;
+      margin-left: 15%;
+      margin-top: 10%;
+    "
+  >
+    <form class="custom-form" method="post" style="text-align: center">
       <h1>Login</h1>
       <input
+        pInputText
         type="email"
         [(ngModel)]="email"
         name="email"
         placeholder="Email"
         required="required"
+        style="margin-bottom: 3%; width: 60%"
       />
+      <br />
       <input
+        pInputText
         type="password"
         [(ngModel)]="password"
         name="password"
         placeholder="Password"
         required="required"
+        style="margin-bottom: 3%; width: 60%"
       />
-      <button type="submit" (click)="login()">Log in</button>
+      <br />
+
+      <a href="" style="color: white; margin-right: 25%">¿ Olvidaste tu contraseña ?</a>
+      <br />
+      <button
+        type="submit"
+        (click)="login()"
+        style="
+          width: 60%;
+          border-radius: 5px;
+          height: 40px;
+          background-color: #032541;
+          color: white;
+          font-size: 15px;
+          margin-bottom: 3%;
+          margin-top: 3%;
+        "
+      >
+        Log in
+      </button>
+      <br />
+      <a href="" style="color: white">¿ No tienes cuenta ?</a>
     </form>
   </div>
+</div>

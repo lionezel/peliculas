@@ -5,6 +5,8 @@ import { AccordionModule } from 'primeng/accordion';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DropdownModule } from 'primeng/dropdown';
 import { CarouselModule } from 'primeng/carousel';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [],
@@ -14,6 +16,8 @@ import { CarouselModule } from 'primeng/carousel';
     ProgressSpinnerModule,
     DropdownModule,
     CarouselModule,
+    InputTextModule,
+    ButtonModule,
   ],
   exports: [
     CommonModule,
@@ -21,6 +25,8 @@ import { CarouselModule } from 'primeng/carousel';
     ProgressSpinnerModule,
     DropdownModule,
     CarouselModule,
+    InputTextModule,
+    ButtonModule,
   ],
 })
 export class NgPrimeModule {}
