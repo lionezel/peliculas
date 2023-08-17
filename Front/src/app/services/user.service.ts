@@ -4,6 +4,9 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
 } from '@angular/fire/auth';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
@@ -47,5 +50,13 @@ export class UserService {
 
   getLogin({ email, password }: any) {
     return signInWithEmailAndPassword(this._auth, email, password);
+  }
+
+  getLoginWhithGoogle() {
+    return signInWithPopup(this._auth, new GoogleAuthProvider());
+  }
+
+  getLogout() {
+    return signOut(this._auth);
   }
 }

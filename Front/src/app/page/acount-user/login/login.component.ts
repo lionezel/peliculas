@@ -38,4 +38,10 @@ export class LoginComponent {
       console.log(response);
     });
   }
+
+  onClick() {
+    this._userServices.getLoginWhithGoogle().then((response) => {
+      console.log(response);
+    });
+  }
 }
