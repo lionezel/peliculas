@@ -11,42 +11,31 @@
     width: 100%;
   "
 >
-  <div class="register" style="width: 40%; margin-left: 15%; margin-top: 10%">
-    <form class="custom-form" method="post" style="text-align: center">
-      <h1>Register</h1>
+  <div class="login" style="width: 40%; margin-left: 15%; margin-top: 10%">
+    <h2>Registro de usuario</h2>
+    <form [formGroup]="formReg" (ngSubmit)="register()">
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Email"
+          style="margin-bottom: 3%; width: 60%"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Password"
+          style="margin-bottom: 3%; width: 60%"
+        />
+      </div>
+
       <input
-        pInputText
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        placeholder="Email"
-        required="required"
-        style="margin-bottom: 3%; width: 60%"
-      />
-      <br />
-      <input
-        pInputText
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        placeholder="Password"
-        required="required"
-        style="margin-bottom: 3%; width: 60%"
-      />
-      <br />
-      <input
-        pInputText
-        type="password"
-        [(ngModel)]="confirmPassword"
-        name="password"
-        placeholder="Repeat the password"
-        required="required"
-        style="margin-bottom: 3%; width: 60%"
-      />
-      <br />
-      <button
         type="submit"
-        (click)="register()"
+        value="Registrarse"
         style="
           width: 60%;
           border-radius: 5px;
@@ -57,24 +46,11 @@
           margin-bottom: 3%;
           margin-top: 3%;
         "
-      >
-        Register
-      </button>
+      />
       <br />
-      <a [routerLink]="['/login']" style="color: white">¿ Ya tienes cuenta ?</a>
+      <a [routerLink]="['/login']" style="color: white; margin-left: 20%"
+        >¿Tienes cuenta?</a
+      >
     </form>
   </div>
-  <h2>Registro de usuario</h2>
-  <form [formGroup]="formReg" (ngSubmit)="register()">
-      <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="text" class="form-control" formControlName="email">
-      </div>
-      <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" formControlName="password">
-      </div>
-      <input type="submit" value="Enviar">
-  </form>
 </div>
-
