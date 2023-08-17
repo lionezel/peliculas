@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from '@angular/fire/auth';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 
@@ -39,5 +43,9 @@ export class UserService {
 
   getRegister({ email, password }: any) {
     return createUserWithEmailAndPassword(this._auth, email, password);
+  }
+
+  getLogin({ email, password }: any) {
+    return signInWithEmailAndPassword(this._auth, email, password);
   }
 }
