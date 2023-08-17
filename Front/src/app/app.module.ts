@@ -20,6 +20,10 @@ import { PageModule } from './page/page.module';
 import { SharedModule } from './shared/shared.module';
 import { NgPrimeModule } from './ng-prime/ng-prime.module';
 import { PipeModule } from './pipe/pipe.module';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +45,9 @@ import { PipeModule } from './pipe/pipe.module';
     MatExpansionModule,
     FormsModule,
     YouTubePlayerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
