@@ -17,6 +17,7 @@ import { PeopleListComponent } from './page/people/people-list/people-list.compo
 import { LoginComponent } from './page/acount-user/login/login.component';
 import { RegisterComponent } from './page/acount-user/register/register.component';
 import { EmailVerificationComponent } from './page/acount-user/email-verification/email-verification.component';
+import { ForgotPasswordComponent } from './page/acount-user/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'verification', component: EmailVerificationComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
 
   { path: 'search', component: SearchPageComponent },
 
