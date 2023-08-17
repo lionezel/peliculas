@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "movie-angular-88773": {
+      "hosting": {
+        "angular-Movies": [
+          "movie-angular-88773"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "movie-angular-88773"
+  }
+}
