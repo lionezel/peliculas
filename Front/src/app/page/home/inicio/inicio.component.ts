@@ -15,13 +15,18 @@ export class InicioComponent implements OnInit {
   public filter: string = '';
   public search_arr: string[] = [];
   public responsiveOptions: any[] | undefined;
+  public user: any;
+  public user_all_data: any;
 
   constructor(
     private _inicioServices: InicioService,
     private _userServices: UserService,
     private _search_home: HomeSearchService,
     private _router: Router
-  ) {}
+  ) {
+    localStorage.setItem('user', JSON.stringify(this.user_all_data));
+    console.log(this.user_all_data);
+  }
   ngOnInit(): void {
     this.discover_serie();
     this.discover_movie();
@@ -50,7 +55,8 @@ export class InicioComponent implements OnInit {
 
   getUserLogged() {
     this._userServices.getUser().subscribe((response) => {
-      console.log(response);
+      this.user = response;
+      console.log(this.user);
     });
   }
 }

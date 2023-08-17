@@ -9,9 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgPrimeModule } from 'src/app/ng-prime/ng-prime.module';
+import { EmailVerificationComponent } from './email-verification/email-verification.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, EmailVerificationComponent],
   imports: [
     CommonModule,
     FormsModule,
