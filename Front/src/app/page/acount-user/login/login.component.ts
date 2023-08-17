@@ -20,28 +20,17 @@ export class LoginComponent {
     });
   }
 
-  logins() {
-    const user = { email: this.email, password: this.password };
-    this._userServices.login(user).subscribe(
-      (data) => {
-        this._userServices.setToken(data.token);
-        this._router.navigateByUrl('/');
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-
   login() {
     this._userServices.getLogin(this.formLogin.value).then((response) => {
       console.log(response);
+      this._router.navigateByUrl('/');
     });
   }
 
   onClick() {
     this._userServices.getLoginWhithGoogle().then((response) => {
       console.log(response);
+      this._router.navigateByUrl('/');
     });
   }
 }

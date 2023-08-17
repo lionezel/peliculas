@@ -21,22 +21,10 @@ export class RegisterComponent {
     });
   }
 
-  registedr() {
-    const user = { email: this.email, password: this.password };
-    this._userServices.register(user).subscribe(
-      (data) => {
-        this._userServices.setToken(data.token);
-        this._router.navigateByUrl('/');
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-
   register() {
     this._userServices.getRegister(this.formReg.value).then((response) => {
       console.log(response);
+      this._router.navigateByUrl('/');
     });
   }
 }
