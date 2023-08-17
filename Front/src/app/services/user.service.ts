@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 
@@ -7,7 +8,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private _http: HttpClient, private _cookies: CookieService) {}
+  constructor(
+    private _http: HttpClient,
+    private _cookies: CookieService,
+    private _auth: Auth
+  ) {}
 
   login(user: any): Observable<any> {
     return this._http.post('https://reqres.in/api/login', user);
@@ -26,9 +31,13 @@ export class UserService {
   }
 
   getUser() {
-    return this._http.get("https://reqres.in/api/users/2");
+    return this._http.get('https://reqres.in/api/users/2');
   }
   getUserLogged() {
     const token = this.getToken();
+  }
+
+  getRegister({ email, password }: any) {
+    return createUserWithEmailAndPassword(this._auth, email, password);
   }
 }

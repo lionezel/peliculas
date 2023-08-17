@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,10 +12,16 @@ export class RegisterComponent {
   public email: string = '';
   public password: string = '';
   public confirmPassword: string = '';
+  public formReg: FormGroup;
 
-  constructor(private _userServices: UserService, private _router: Router) {}
+  constructor(private _userServices: UserService, private _router: Router) {
+    this.formReg = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl(),
+    });
+  }
 
-  register() {
+  registedr() {
     const user = { email: this.email, password: this.password };
     this._userServices.register(user).subscribe(
       (data) => {
@@ -25,5 +32,11 @@ export class RegisterComponent {
         console.log(error);
       }
     );
+  }
+
+  register() {
+    this._userServices.getRegister(this.formReg.value).then((response) => {
+      console.log(response);
+    });
   }
 }
