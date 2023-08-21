@@ -8,13 +8,18 @@ import {
   GoogleAuthProvider,
   signOut,
 } from '@angular/fire/auth';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private _http: HttpClient, private _auth: Auth) {}
+  constructor(
+    private _http: HttpClient,
+    private _auth: Auth,
+    private _firestore: Firestore
+  ) {}
 
   getRegister({ email, password }: any) {
     return createUserWithEmailAndPassword(this._auth, email, password);
@@ -26,6 +31,11 @@ export class UserService {
 
   getLoginWhithGoogle() {
     return signInWithPopup(this._auth, new GoogleAuthProvider());
+  }
+
+  addUser(user: any) {
+    const userRef = collection(this._firestore, 'user');
+    return addDoc(userRef, user);
   }
 
   getLogout() {

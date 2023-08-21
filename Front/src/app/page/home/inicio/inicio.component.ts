@@ -24,13 +24,11 @@ export class InicioComponent implements OnInit {
     private _search_home: HomeSearchService,
     private _router: Router
   ) {
-    localStorage.setItem('user', JSON.stringify(this.user_all_data));
-    console.log(this.user_all_data);
+
   }
   ngOnInit(): void {
     this.discover_serie();
     this.discover_movie();
-    this.getUserLogged();
   }
   discover_movie() {
     this._inicioServices.discover_movie().subscribe((response) => {
@@ -53,10 +51,4 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  getUserLogged() {
-    this._userServices.getUser().subscribe((response) => {
-      this.user = response;
-      console.log(this.user);
-    });
-  }
 }

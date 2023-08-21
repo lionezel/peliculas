@@ -14,7 +14,11 @@ export class RegisterComponent {
   public confirmPassword: string = '';
   public formReg: FormGroup;
 
-  constructor(private _userServices: UserService, private _router: Router) {
+  constructor(
+    private _userServices: UserService,
+    private _router: Router,
+    private _firestore: UserService
+  ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
@@ -23,7 +27,9 @@ export class RegisterComponent {
 
   register() {
     this._userServices.getRegister(this.formReg.value).then((response) => {
+      const collecion = this._firestore.addUser(this.formReg.value);
       console.log(response);
+      console.log(collecion);
       this._router.navigateByUrl('/');
     });
   }
