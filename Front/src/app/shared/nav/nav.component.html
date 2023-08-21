@@ -128,7 +128,7 @@
         </li>
       </ul>
 
-      <ng-container *ngIf="!token"
+      <ng-container *ngIf="!userData"
         ><ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 35%">
           <li class="nav-item dropdown">
             <a
@@ -200,76 +200,94 @@
           </li>
         </ul></ng-container
       >
-      <ng-container *ngIf="token">        ><ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 35%">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            [routerLink]="['/movies/popular']"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="color: white"
-          >
-            <i class="pi pi-plus"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a class="dropdown-item" [routerLink]="['/movies/popular']"
-                >Añadir nueva película</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" [routerLink]="['/movies/now_playing']"
-                >Añadir nuevo programa de tv</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLink]="['/login']"
-            href="#"
-            role="button"
-            aria-expanded="false"
-            style="color: white"
-          >
-           {{token.email}}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            [routerLink]="['/register']"
-            href="#"
-            role="button"
-            aria-expanded="false"
-            style="color: white"
-          >
-            Registrarse
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="color: white"
-          >
-            Más
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Discusiones</a></li>
-            <li>
-              <a class="dropdown-item" href="#">Tabla de clasificación</a>
-            </li>
-            <li><a class="dropdown-item" href="#">Soporte</a></li>
-            <li><a class="dropdown-item" href="#">API</a></li>
-          </ul>
-        </li>
-      </ul> </ng-container>
+      <ng-container *ngIf="userData">
+        <ul
+          class="navbar-nav me-auto mb-2 mb-lg-0"
+          style="margin-left: 35%"
+          *ngFor="let item of userData"
+        >
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              [routerLink]="['/movies/popular']"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: white"
+            >
+              <i class="pi pi-plus"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" [routerLink]="['/movies/popular']"
+                  >Añadir nueva película</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/movies/now_playing']"
+                  >Añadir nuevo programa de tv</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              [routerLink]="['/login']"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: white"
+            >
+              {{ item.name }}
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><strong style="font-size: 20px">{{ item.name }}</strong>
+                  <h5>Ver perfil</h5>
+                  <hr />
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Discusión</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Listas</a></li>
+              <li><a class="dropdown-item" href="#">Valoraciones</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Lista de seguimiento</a>
+              </li>
+              <hr />
+              <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <hr />
+              <li><a class="dropdown-item" (click)="onClick()">Salir</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="color: white"
+            >
+              Más
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Discusiones</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Tabla de clasificación</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Soporte</a></li>
+              <li><a class="dropdown-item" href="#">API</a></li>
+            </ul>
+          </li>
+        </ul>
+      </ng-container>
     </div>
   </div>
 </nav>

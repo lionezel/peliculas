@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserRegister } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  public name: string = '';
   public email: string = '';
   public password: string = '';
   public confirmPassword: string = '';
@@ -22,6 +24,7 @@ export class RegisterComponent {
     this.formReg = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
+      name: new FormControl(),
     });
   }
 

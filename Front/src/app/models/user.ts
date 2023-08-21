@@ -1,8 +1,14 @@
 export interface UserRegister {
   name: string;
-  age: number;
   email: string;
   uid: string;
   password: string;
-  profile: 'usuario' | 'admin';
+  confirmPassword: string;
+}
+
+export interface User {
+  name: string;
+  email: string;
+  id: string;
+  password: string;
 }

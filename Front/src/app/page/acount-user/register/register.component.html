@@ -14,6 +14,17 @@
   <div class="login" style="width: 40%; margin-left: 15%; margin-top: 10%">
     <h2>Registro de usuario</h2>
     <form [formGroup]="formReg" (ngSubmit)="register()">
+
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Name"
+          style="margin-bottom: 3%; width: 60%"
+        />
+      </div>
+
       <div class="mb-3">
         <input
           type="email"

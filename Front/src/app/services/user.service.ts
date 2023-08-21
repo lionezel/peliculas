@@ -8,7 +8,7 @@ import {
   GoogleAuthProvider,
   signOut,
 } from '@angular/fire/auth';
-import { Firestore, addDoc, collection } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -36,6 +36,11 @@ export class UserService {
   addUser(user: any) {
     const userRef = collection(this._firestore, 'user');
     return addDoc(userRef, user);
+  }
+
+  getUser(): Observable<any>{
+    const userRef = collection(this._firestore, 'user');
+    return collectionData(userRef, {idField: 'id'}) as Observable<any>
   }
 
   getLogout() {

@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 import { CarouselModule } from './carousel/carousel.module';
 import { PipeModule } from '../pipe/pipe.module';
+import { NgPrimeModule } from '../ng-prime/ng-prime.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { PipeModule } from '../pipe/pipe.module';
     NavComponent,
     SerieDetailComponent,
   ],
-  imports: [CommonModule, CarouselModule, PipeModule, RouterModule],
+  imports: [CommonModule, CarouselModule, PipeModule, RouterModule, NgPrimeModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     CircularProgressComponent,
