@@ -7,14 +7,27 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  authState,
 } from '@angular/fire/auth';
+import {
+  Firestore,
+  addDoc,
+  collection,
+  collectionData,
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private _http: HttpClient, private _auth: Auth) {}
+  constructor(
+    private _http: HttpClient,
+    private _auth: Auth,
+    private _firestore: Firestore
+  ) {}
+
+  authState$ = authState(this._auth);
 
   getRegister({ email, password }: any) {
     return createUserWithEmailAndPassword(this._auth, email, password);
@@ -26,6 +39,16 @@ export class UserService {
 
   getLoginWhithGoogle() {
     return signInWithPopup(this._auth, new GoogleAuthProvider());
+  }
+
+  addUser(user: any) {
+    const userRef = collection(this._firestore, 'user');
+    return addDoc(userRef, user);
+  }
+
+  getUser(): Observable<any> {
+    const userRef = collection(this._firestore, 'user');
+    return collectionData(userRef, { idField: 'id' }) as Observable<any>;
   }
 
   getLogout() {

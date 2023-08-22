@@ -29,6 +29,8 @@ import {
   connectFirestoreEmulator,
 } from '@angular/fire/firestore';
 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -49,6 +51,9 @@ import {
     MatExpansionModule,
     FormsModule,
     YouTubePlayerModule,
+    ToastrModule.forRoot({
+      positionClass : 'toast-bottom-right'
+    }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

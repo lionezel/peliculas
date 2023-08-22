@@ -7,6 +7,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CarouselModule } from 'primeng/carousel';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -18,6 +21,9 @@ import { ButtonModule } from 'primeng/button';
     CarouselModule,
     InputTextModule,
     ButtonModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ToastModule
   ],
   exports: [
     CommonModule,
@@ -27,6 +33,9 @@ import { ButtonModule } from 'primeng/button';
     CarouselModule,
     InputTextModule,
     ButtonModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ToastModule
   ],
 })
 export class NgPrimeModule {}

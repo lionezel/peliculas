@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { UserService } from 'src/app/services/user.service';
+
+declare var iziToast: any;
 
 @Component({
   selector: 'app-login',
@@ -12,6 +15,7 @@ export class LoginComponent {
   public email: string = '';
   public password: string = '';
   public formLogin: FormGroup;
+  public userData: any;
 
   constructor(private _userServices: UserService, private _router: Router) {
     this.formLogin = new FormGroup({
@@ -22,7 +26,8 @@ export class LoginComponent {
 
   login() {
     this._userServices.getLogin(this.formLogin.value).then((response) => {
-      console.log(response);
+      this.userData = response.user;
+      console.log(this.userData);
       this._router.navigateByUrl('/');
     });
   }
