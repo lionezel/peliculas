@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,15 +10,17 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  public userData: User[] = [];
-
-  constructor(private _userServices: UserService, private _router: Router) {}
-
+  public user$ = this._userServices.authState$.pipe(
+    filter(state => state ? true : false)
+  )
+  
+  constructor(private _userServices: UserService, private _router: Router) {
+    
+  }
+  
+  
   ngOnInit(): void {
-    this._userServices.getUser().subscribe((response) => {
-      this.userData = response;
-      console.log(this.userData);
-    });
+    
   }
 
   onClick() {
