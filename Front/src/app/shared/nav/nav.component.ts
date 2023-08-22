@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,17 +10,15 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavComponent implements OnInit {
   public user$ = this._userServices.authState$.pipe(
-    filter(state => state ? true : false)
-  )
-  
-  constructor(private _userServices: UserService, private _router: Router) {
-    
-  }
-  
-  
-  ngOnInit(): void {
-    
-  }
+    filter((state) => (state ? true : false))
+  );
+
+  constructor(
+    private _userServices: UserService,
+    private _router: Router,
+  ) {}
+
+  ngOnInit(): void {}
 
   onClick() {
     this._userServices.getLogout().then(() => {

@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [],
@@ -21,7 +22,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     InputTextModule,
     ButtonModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    ToastModule
   ],
   exports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     InputTextModule,
     ButtonModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    ToastModule
   ],
 })
 export class NgPrimeModule {}
